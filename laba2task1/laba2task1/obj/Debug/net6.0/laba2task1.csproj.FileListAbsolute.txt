@@ -1,0 +1,14 @@
+C:\Users\Admin\source\repos\laba2task1\laba2task1\bin\Debug\net6.0\laba2task1.exe
+C:\Users\Admin\source\repos\laba2task1\laba2task1\bin\Debug\net6.0\laba2task1.deps.json
+C:\Users\Admin\source\repos\laba2task1\laba2task1\bin\Debug\net6.0\laba2task1.runtimeconfig.json
+C:\Users\Admin\source\repos\laba2task1\laba2task1\bin\Debug\net6.0\laba2task1.dll
+C:\Users\Admin\source\repos\laba2task1\laba2task1\bin\Debug\net6.0\laba2task1.pdb
+C:\Users\Admin\source\repos\laba2task1\laba2task1\obj\Debug\net6.0\laba2task1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\source\repos\laba2task1\laba2task1\obj\Debug\net6.0\laba2task1.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\laba2task1\laba2task1\obj\Debug\net6.0\laba2task1.AssemblyInfo.cs
+C:\Users\Admin\source\repos\laba2task1\laba2task1\obj\Debug\net6.0\laba2task1.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\laba2task1\laba2task1\obj\Debug\net6.0\laba2task1.dll
+C:\Users\Admin\source\repos\laba2task1\laba2task1\obj\Debug\net6.0\refint\laba2task1.dll
+C:\Users\Admin\source\repos\laba2task1\laba2task1\obj\Debug\net6.0\laba2task1.pdb
+C:\Users\Admin\source\repos\laba2task1\laba2task1\obj\Debug\net6.0\laba2task1.genruntimeconfig.cache
+C:\Users\Admin\source\repos\laba2task1\laba2task1\obj\Debug\net6.0\ref\laba2task1.dll
