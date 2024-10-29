@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 
 public class MatrixOperations
@@ -58,10 +58,26 @@ public class MatrixOperations
     // Метод для поиска максимального неповторяющегося элемента
     public int FindMaxUniqueElement()
     {
-        var elementCounts = matrix.Cast<int>().GroupBy(x => x).ToDictionary(g => g.Key, g => g.Count());
-        int maxUnique = elementCounts.Where(kvp => kvp.Value == 1).Select(kvp => kvp.Key).DefaultIfEmpty(int.MinValue).Max();
+        Dictionary<int, int> elementCounts = new Dictionary<int, int>();
+
+        foreach (int element in matrix)
+        {
+            if (elementCounts.ContainsKey(element))
+                elementCounts[element]++;
+            else
+                elementCounts[element] = 1;
+        }
+
+        int maxUnique = int.MinValue;
+        foreach (var kvp in elementCounts)
+        {
+            if (kvp.Value == 1 && kvp.Key > maxUnique)
+                maxUnique = kvp.Key;
+        }
+
         return maxUnique;
     }
+
 
     // Перегрузка оператора для умножения двух матриц
     public static MatrixOperations operator *(MatrixOperations a, MatrixOperations b)
@@ -110,7 +126,6 @@ public class MatrixOperations
         return (2 * A) - (B * C);
     }
 
-    // Переопределение ToString() для вывода массива
     public override string ToString()
     {
         int rows = matrix.GetLength(0);
@@ -127,7 +142,6 @@ public class MatrixOperations
         return result;
     }
 
-    // Вспомогательный приватный конструктор для создания из двумерного массива
     private MatrixOperations(int[,] data)
     {
         matrix = data;
