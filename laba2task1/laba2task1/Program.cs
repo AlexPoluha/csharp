@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 public class StringClass
 {
@@ -10,8 +10,6 @@ public class StringClass
     {
         _text = text;
     }
-
-    // Конструктор копирования
     public StringClass(StringClass other)
     {
         _text = other._text;
@@ -38,16 +36,13 @@ public class StringClass
 // Дочерний класс расширяющий функциональность StringClass
 public class ExtendedStringClass : StringClass
 {
-    // Дополнительные поля
     public int WordCount { get; private set; }
 
-    // Конструктор принимающий строку и инициализирующий поля
     public ExtendedStringClass(string text) : base(text)
     {
         WordCount = CountWords(text);
     }
 
-    // Конструктор копирования
     public ExtendedStringClass(ExtendedStringClass other) : base(other)
     {
         WordCount = other.WordCount;
@@ -56,10 +51,17 @@ public class ExtendedStringClass : StringClass
     // Метод для подсчета количества слов в строке
     private int CountWords(string text)
     {
-        if (string.IsNullOrWhiteSpace(text))
-            return 0;
 
-        return text.Split(new char[] { ' ', '\t', '\n' }, StringSplitOptions.RemoveEmptyEntries).Length;
+        if (string.IsNullOrWhiteSpace(text))
+        {
+            Console.WriteLine("Текст пустой или состоит только из пробелов.");
+            return 0;
+        }
+
+        int wordCount = text.Split(new char[] { ' ', '\t', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries).Length;
+
+        Console.WriteLine($"Количество слов: {wordCount}");
+        return wordCount;
     }
 
     // Метод для проверки содержит ли строка определенное слово
@@ -83,29 +85,37 @@ public class ExtendedStringClass : StringClass
     }
 }
 
-// Тестирование классов
 public class Program
 {
     public static void Main()
     {
-        // Тест базового класса
-        StringClass baseObj = new StringClass("Hello World!");
+        string baseText = InputString("Введите текст для базового объекта: ");
+        StringClass baseObj = new StringClass(baseText);
+        
         Console.WriteLine("Базовый объект (baseObj): " + baseObj.ToString());
         Console.WriteLine("Первый и последний символы baseObj: " + baseObj.GetFirstAndLastCharacters());
 
-        // Тест конструктора копирования базового класса
         StringClass copyBaseObj = new StringClass(baseObj);
         Console.WriteLine("Скопированный объект базового класса (copyBaseObj): " + copyBaseObj.ToString());
 
-        // Тест дочернего класса
-        ExtendedStringClass extendedObj = new ExtendedStringClass("Hello C# World!");
+        string extendedText = InputString("Введите текст для дочернего объекта: ");
+        ExtendedStringClass extendedObj = new ExtendedStringClass(extendedText);
+        
         Console.WriteLine("Дочерний объект (extendedObj): " + extendedObj.ToString());
         Console.WriteLine("Количество слов в extendedObj: " + extendedObj.WordCount);
-        Console.WriteLine("Проверка наличия слова 'C#' в extendedObj: " + extendedObj.ContainsWord("C#"));
+
+        string wordToFind = InputString("Введите слово для проверки наличия в extendedObj: ");
+        Console.WriteLine($"Проверка наличия слова '{wordToFind}' в extendedObj: " + extendedObj.ContainsWord(wordToFind));
+
         Console.WriteLine("extendedObj в верхнем регистре: " + extendedObj.ToUpperCase());
 
-        // Тест конструктора копирования дочернего класса
         ExtendedStringClass copyExtendedObj = new ExtendedStringClass(extendedObj);
         Console.WriteLine("Скопированный дочерний объект (copyExtendedObj): " + copyExtendedObj.ToString());
+    }
+
+    public static string InputString(string prompt)
+    {
+        Console.Write(prompt);
+        return Console.ReadLine();
     }
 }
