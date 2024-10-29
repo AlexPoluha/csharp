@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 public class Time
 {
@@ -9,13 +9,22 @@ public class Time
     // Конструктор
     public Time(byte hours, byte minutes)
     {
-        Hours = (byte)(hours % 24); 
-        Minutes = (byte)(minutes % 60);
+        if (hours > 23)
+            throw new ArgumentOutOfRangeException(nameof(hours), "Часы должны быть в диапазоне от 0 до 23.");
+
+        if (minutes > 59)
+            throw new ArgumentOutOfRangeException(nameof(minutes), "Минуты должны быть в диапазоне от 0 до 59.");
+
+        Hours = hours;
+        Minutes = minutes;
     }
 
     // Метод добавления минут к объекту Time
     public Time AddMinutes(uint minutesToAdd)
     {
+        if (minutesToAdd > uint.MaxValue - ((uint)Hours * 60 + Minutes))
+            throw new OverflowException("Слишком большое значение минут, превышающее допустимый диапазон.");
+
         uint totalMinutes = (uint)Hours * 60 + Minutes + minutesToAdd;
         byte newHours = (byte)((totalMinutes / 60) % 24);
         byte newMinutes = (byte)(totalMinutes % 60);
@@ -50,8 +59,9 @@ public class Time
     public static Time operator -(Time t, uint minutes)
     {
         uint totalMinutes = (uint)t.Hours * 60 + t.Minutes;
+
         if (minutes >= totalMinutes)
-            return new Time(0, 0);
+            return new Time(0, 0); // Если вычитаем больше, чем есть минут, возвращаем 00:00
 
         totalMinutes -= minutes;
         byte newHours = (byte)((totalMinutes / 60) % 24);
@@ -65,6 +75,7 @@ public class Time
         return $"{Hours:D2}:{Minutes:D2}";
     }
 }
+
 
 public class Program
 {
@@ -116,7 +127,7 @@ public class Program
                 }
             }
             else
-            {
+            {  
                 Console.WriteLine("Некорректная команда.");
             }
         }
