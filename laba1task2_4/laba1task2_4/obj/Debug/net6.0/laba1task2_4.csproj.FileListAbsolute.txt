@@ -1,0 +1,14 @@
+C:\Users\Admin\source\repos\laba1task2_4\laba1task2_4\bin\Debug\net6.0\laba1task2_4.exe
+C:\Users\Admin\source\repos\laba1task2_4\laba1task2_4\bin\Debug\net6.0\laba1task2_4.deps.json
+C:\Users\Admin\source\repos\laba1task2_4\laba1task2_4\bin\Debug\net6.0\laba1task2_4.runtimeconfig.json
+C:\Users\Admin\source\repos\laba1task2_4\laba1task2_4\bin\Debug\net6.0\laba1task2_4.dll
+C:\Users\Admin\source\repos\laba1task2_4\laba1task2_4\bin\Debug\net6.0\laba1task2_4.pdb
+C:\Users\Admin\source\repos\laba1task2_4\laba1task2_4\obj\Debug\net6.0\laba1task2_4.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\source\repos\laba1task2_4\laba1task2_4\obj\Debug\net6.0\laba1task2_4.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\laba1task2_4\laba1task2_4\obj\Debug\net6.0\laba1task2_4.AssemblyInfo.cs
+C:\Users\Admin\source\repos\laba1task2_4\laba1task2_4\obj\Debug\net6.0\laba1task2_4.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\laba1task2_4\laba1task2_4\obj\Debug\net6.0\laba1task2_4.dll
+C:\Users\Admin\source\repos\laba1task2_4\laba1task2_4\obj\Debug\net6.0\refint\laba1task2_4.dll
+C:\Users\Admin\source\repos\laba1task2_4\laba1task2_4\obj\Debug\net6.0\laba1task2_4.pdb
+C:\Users\Admin\source\repos\laba1task2_4\laba1task2_4\obj\Debug\net6.0\laba1task2_4.genruntimeconfig.cache
+C:\Users\Admin\source\repos\laba1task2_4\laba1task2_4\obj\Debug\net6.0\ref\laba1task2_4.dll
