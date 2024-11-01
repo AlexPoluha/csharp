@@ -1,26 +1,26 @@
-﻿using System;
+using System;
 
 public class Solutions
 {
     // Задание 2
-    // 1
+    // 2
     public double SafeDiv(int x, int y)
     {
         return y == 0 ? 0 : (double)x / y;
     }
-    // 2
+    // 4
     public string MakeDecision(int x, int y)
     {
         if (x > y) return $"{x} > {y}";
         if (x < y) return $"{x} < {y}";
         return $"{x} = {y}";
     }
-    // 3
+    // 6
     public bool Sum3(int x, int y, int z)
     {
         return x + y == z || x + z == y || y + z == x;
     }
-    // 4
+    // 8
     public string Age(int x)
     {
         if (x % 100 >= 11 && x % 100 <= 14) return $"{x} лет";
@@ -28,10 +28,10 @@ public class Solutions
         if (x % 10 >= 2 && x % 10 <= 4) return $"{x} года";
         return $"{x} лет";
     }
-    // 5
+    // 10
     public void PrintDays(string x)
     {
-        switch (x.ToLower())
+        switch (x)
         {
             case "понедельник":
                 Console.WriteLine("Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье");
@@ -54,13 +54,13 @@ public class Solutions
             case "воскресенье":
                 Console.WriteLine("Воскресенье");
                 break;
-            default:
+            default: 
                 Console.WriteLine("это не день недели");
                 break;
         }
     }
     // Задание 3
-    // 1
+    // 2
     public string ReverseListNums(int x)
     {
         string result = "";
@@ -68,9 +68,9 @@ public class Solutions
         {
             result += i + " ";
         }
-        return result.Trim();
+        return result;
     }
-    // 2
+    // 4
     public int Pow(int x, int y)
     {
         int result = 1;
@@ -80,18 +80,18 @@ public class Solutions
         }
         return result;
     }
-    // 3
+    // 6
     public bool EqualNum(int x)
     {
-        int lastDigit = Math.Abs(x % 10);
+        int lastDigit = x % 10;
         while (x != 0)
         {
-            if (Math.Abs(x % 10) != lastDigit) return false;
+            if (x % 10 != lastDigit) return false;
             x /= 10;
         }
         return true;
     }
-    // 4
+    // 8
     public void LeftTriangle(int x)
     {
         for (int i = 1; i <= x; i++)
@@ -103,7 +103,7 @@ public class Solutions
             Console.WriteLine();
         }
     }
-    // 5
+    // 10
     public void GuessGame()
     {
         Random rand = new Random();
@@ -122,7 +122,7 @@ public class Solutions
         Console.WriteLine($"Поздравляю! Вы угадали число {number} за {attempts} попыток.");
     }
     // Задание 4
-    // 1
+    // 2
     public int FindLast(int[] arr, int x)
     {
         int lastIndex = -1;
@@ -132,7 +132,7 @@ public class Solutions
         }
         return lastIndex;
     }
-    // 2
+    // 4
     public int[] Add(int[] arr, int x, int pos)
     {
         if (pos < 0 || pos > arr.Length) return arr;
@@ -149,7 +149,7 @@ public class Solutions
         }
         return newArr;
     }
-    // 3
+    // 6
     public void Reverse(int[] arr)
     {
         int n = arr.Length;
@@ -160,7 +160,7 @@ public class Solutions
             arr[n - 1 - i] = temp;
         }
     }
-    // 4
+    // 8
     public int[] Concat(int[] arr1, int[] arr2)
     {
         int[] result = new int[arr1.Length + arr2.Length];
@@ -174,7 +174,7 @@ public class Solutions
         }
         return result;
     }
-    // 5
+    // 10
     public int[] DeleteNegative(int[] arr)
     {
         int count = 0;
@@ -196,65 +196,65 @@ public class Program
 {
     public static void Main()
     {
-        Solutions solutions = new Solutions();
+        Solutions sol = new Solutions();
         // Задание 2
-        // 1
+        // 2
         Console.WriteLine("Введите два числа для метода SafeDiv:");
         int x = ReadIntInput();
         int y = ReadIntInput();
-        Console.WriteLine("SafeDiv(x, y): " + solutions.SafeDiv(x, y));
+        Console.WriteLine("SafeDiv(x, y): " + sol.SafeDiv(x, y));
 
-        // 2
+        // 4
         Console.WriteLine("Введите два числа для метода MakeDecision:");
         x = ReadIntInput();
         y = ReadIntInput();
-        Console.WriteLine("MakeDecision(x, y): " + solutions.MakeDecision(x, y));
+        Console.WriteLine("MakeDecision(x, y): " + sol.MakeDecision(x, y));
 
-        // 3
+        // 6
         Console.WriteLine("Введите три числа для метода Sum3:");
         int a = ReadIntInput();
         int b = ReadIntInput();
         int c = ReadIntInput();
-        Console.WriteLine("Sum3(a, b, c): " + solutions.Sum3(a, b, c));
+        Console.WriteLine("Sum3(a, b, c): " + sol.Sum3(a, b, c));
 
-        // 4
+        // 8
         Console.WriteLine("Введите число для метода Age:");
         int age = ReadIntInput();
-        Console.WriteLine("Age(age): " + solutions.Age(age));
+        Console.WriteLine("Age(age): " + sol.Age(age));
 
-        // 5
+        // 10
         Console.WriteLine("Введите день недели для метода PrintDays:");
         string day = Console.ReadLine();
-        solutions.PrintDays(day);
+        sol.PrintDays(day);
 
         // Задание 3
-        // 1
+        // 2
         Console.WriteLine("Введите число для метода ReverseListNums:");
         x = ReadIntInput();
-        Console.WriteLine("ReverseListNums(x): " + solutions.ReverseListNums(x));
+        Console.WriteLine("ReverseListNums(x): " + sol.ReverseListNums(x));
 
-        // 2
+        // 4
         Console.WriteLine("Введите два числа для метода Pow:");
         x = ReadIntInput();
         y = ReadIntInput();
-        Console.WriteLine("Pow(x, y): " + solutions.Pow(x, y));
+        Console.WriteLine("Pow(x, y): " + sol.Pow(x, y));
 
-        // 3
+        // 6
         Console.WriteLine("Введите число для метода EqualNum:");
         x = ReadIntInput();
-        Console.WriteLine("EqualNum(x): " + solutions.EqualNum(x));
+        Console.WriteLine("EqualNum(x): " + sol.EqualNum(x));
 
-        // 4
+        // 8
         Console.WriteLine("Введите высоту для метода LeftTriangle:");
         x = ReadIntInput();
-        solutions.LeftTriangle(x);
+        sol.LeftTriangle(x);
 
-        // 5
+        // 10
         Console.WriteLine("Начинаем игру Угадайка:");
-        solutions.GuessGame();
+        sol.GuessGame();
 
         // Задание 4
-        // 1
+        // 2
         Console.WriteLine("Введите длину массива для FindLast:");
         int len = ReadIntInput();
         int[] arr = new int[len];
@@ -265,30 +265,30 @@ public class Program
         }
         Console.WriteLine("Введите число для поиска последнего вхождения:");
         x = ReadIntInput();
-        Console.WriteLine("FindLast(arr, x): " + solutions.FindLast(arr, x));
+        Console.WriteLine("FindLast(arr, x): " + sol.FindLast(arr, x));
 
-        // 2
+        // 4
         Console.WriteLine("Введите позицию для добавления и значение для метода Add:");
         x = ReadIntInput();
         int pos = ReadIntInput();
         Console.WriteLine("Результат добавления в массив:");
-        int[] newArr = solutions.Add(arr, x, pos);
+        int[] newArr = sol.Add(arr, x, pos);
         foreach (var item in newArr)
         {
             Console.Write(item + " ");
         }
         Console.WriteLine();
 
-        // 3
+        // 6
         Console.WriteLine("Реверс массива:");
-        solutions.Reverse(arr);
+        sol.Reverse(arr);
         foreach (var item in arr)
         {
             Console.Write(item + " ");
         }
         Console.WriteLine();
 
-        // 4
+        // 8
         Console.WriteLine("Введите длину второго массива для Concat:");
         int len2 = ReadIntInput();
         int[] arr2 = new int[len2];
@@ -297,7 +297,7 @@ public class Program
         {
             arr2[i] = ReadIntInput();
         }
-        int[] concatenated = solutions.Concat(arr, arr2);
+        int[] concatenated = sol.Concat(arr, arr2);
         Console.WriteLine("Результат объединения массивов:");
         foreach (var item in concatenated)
         {
@@ -305,9 +305,9 @@ public class Program
         }
         Console.WriteLine();
 
-        // 5
+        // 10
         Console.WriteLine("Результат удаления отрицательных чисел:");
-        int[] noNegative = solutions.DeleteNegative(arr);
+        int[] noNegative = sol.DeleteNegative(arr);
         foreach (var item in noNegative)
         {
             Console.Write(item + " ");
