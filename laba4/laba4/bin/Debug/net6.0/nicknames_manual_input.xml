@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StudentsData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Students>
+    <Student>
+      <Name>frog r</Name>
+      <Login>frog</Login>
+    </Student>
+    <Student>
+      <Name>frog t</Name>
+      <Login>frog2</Login>
+    </Student>
+    <Student>
+      <Name>hot dog</Name>
+      <Login>hot</Login>
+    </Student>
+  </Students>
+</StudentsData>

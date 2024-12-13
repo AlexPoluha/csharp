@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StudentsData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Students>
+    <Student>
+      <Name>Иванова Мария</Name>
+      <Login>Иванова</Login>
+    </Student>
+    <Student>
+      <Name>Петров Сергей</Name>
+      <Login>Петров</Login>
+    </Student>
+    <Student>
+      <Name>Бойцова Екатерина</Name>
+      <Login>Бойцова</Login>
+    </Student>
+    <Student>
+      <Name>Петров Иван</Name>
+      <Login>Петров2</Login>
+    </Student>
+    <Student>
+      <Name>Иванова Наташа</Name>
+      <Login>Иванова2</Login>
+    </Student>
+  </Students>
+</StudentsData>
